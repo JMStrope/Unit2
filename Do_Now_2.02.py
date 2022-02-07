@@ -33,13 +33,13 @@ Update the code to fit the new driving law: If you are over the age of 18 you do
 Part 3
 ----------------------------
 Open up the console. Type the following code into the interactive editor.
->>> animal = 'mouse'
+>>> animal = 'mouse' 
 >>> animal == 'cat' or 'dog'
 >>> animal = 'mouse'
 >>> animal == 'cat' or animal == 'dog'
 In your notebook, continue answers to the following
 What does = and == do here?
-What is the difference between the two 'or' statements?
+What is the difference between the two 'or' statements?  = sets an input to something and == compares the two
 '''
 months_with_driving_permit = 6
 age = 16

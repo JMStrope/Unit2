@@ -8,20 +8,20 @@ Predict if each of the following examples will produce a True or False output. C
 Example 1
     >>> a = 100                                 
     >>> b = "science"
-    >>> a > 75 and b == "science"       Prediction:  false                   Actual:
+    >>> a > 75 and b == "science"       Prediction:  false                   Actual: true
 Example 2
     >>> a = 100
     >>> b = "science"
-    >>> a > 75 and b != "science"       Prediction:                     Actual:
+    >>> a > 75 and b != "science"       Prediction: true                     Actual: false
 Example 3
     >>> a = 100
     >>> b = "science"
-    >>> a > 75 or b != "science"        Prediction:                     Actual:
+    >>> a > 75 or b != "science"        Prediction:   true                   Actual:   true
 Example 4
     >>> a = 100
     >>> b = "science"
     >>> c = True
-    >>> not c and a > 75 and b == "science"     Prediction:                     Actual:
+    >>> not c and a > 75 and b == "science"     Prediction: False                     Actual:   False
 
 In your Console
 
@@ -51,3 +51,8 @@ not(x or y) == not x and not y
 
 not(x and y) == not x or not y
 '''
+
+age =input("How old are you? ")
+resident =input("How many years have you been a US Residence? ")
+Citizen =input("Are you a natural born citizen")
+if {age} >= 35 and {resident} >= 14 and {Citizen} == "yes" then print("You can president")
