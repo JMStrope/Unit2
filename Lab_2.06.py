@@ -55,6 +55,7 @@ You will not need to determine the winner at this point.
 
 #board 
 board = [[1,2,3,], [4,5,6], [7,8,9]]
+player = 1
 
 print(f"{board[0][0]} | {board[0][1]} | {board[0][2]}")
 print("---------")
@@ -62,65 +63,49 @@ print(f"{board[1][0]} | {board[1][1]} | {board[1][2]}")
 print("---------")
 print(f"{board[2][0]} | {board[2][1]} | {board[2][2]}")
 
-
-while True:
+turn = 0
+while turn < 9:
     #player turn
+    if player == 1:
+        player_symbol = 'X'
+    else:
+        player_symbol = 'O'
+
     p1_turn = int(input("p1 pick a number to place your X: "))
 
     if p1_turn == 1:
-        board[0][0] = 'X'
+        board[0][0] = player_symbol
     elif p1_turn == 2:
-        board[0][1] = 'X'
+        board[0][1] = player_symbol
     elif p1_turn == 3:
-        board[0][2] = 'X'
+        board[0][2] = player_symbol
     elif p1_turn == 4:
-        board[1][0] = 'X'
+        board[1][0] = player_symbol
     elif p1_turn == 5:
-        board[1][1] = 'X'
+        board[1][1] = player_symbol
     elif p1_turn == 6:
-        board[1][2] = 'X'
+        board[1][2] = player_symbol
     elif p1_turn == 7:
-        board[2][0] = 'X'
+        board[2][0] = player_symbol
     elif p1_turn == 8:
-        board[2][1] = 'X'
+        board[2][1] = player_symbol
     elif p1_turn == 9:
-        board[2][2] = 'X'
-    else:
-        print("invalid number pelase try again")
-
-    #update board
-    print(f"{board[0][0]} | {board[0][1]} | {board[0][2]}")
-    print("---------")
-    print(f"{board[1][0]} | {board[1][1]} | {board[1][2]}")
-    print("---------")
-    print(f"{board[2][0]} | {board[2][1]} | {board[2][2]}")
-
-    p2_turn = int(input("p2 pick a number to place your O: "))
-
-    if p2_turn == 1:
-        board[0][0] = 'O'
-    elif p2_turn == 2:
-        board[0][1] = 'O'
-    elif p2_turn == 3:
-        board[0][2] = 'O'
-    elif p2_turn == 4:
-        board[1][0] = 'O'
-    elif p2_turn == 5:
-        board[1][1] = 'O'
-    elif p2_turn == 6:
-        board[1][2] = 'O'
-    elif p2_turn == 7:
-        board[2][0] = 'O'
-    elif p2_turn == 8:
-        board[2][1] = 'O'
-    elif p2_turn == 9:
-        board[2][2] = 'O'
+        board[2][2] = player_symbol
     else:
         print("invalid number please try again")
 
+    turn += 1 
+    print({turn})
+
     #update board
     print(f"{board[0][0]} | {board[0][1]} | {board[0][2]}")
     print("---------")
     print(f"{board[1][0]} | {board[1][1]} | {board[1][2]}")
     print("---------")
     print(f"{board[2][0]} | {board[2][1]} | {board[2][2]}")
+
+    if player == 1:
+        player = 2
+    else:
+        player = 1
+print("GAME OVER")
