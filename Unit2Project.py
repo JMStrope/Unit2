@@ -1,9 +1,7 @@
 #Map of dungeon
-
-
 dungeon = [
     ['prize','boss monster', 'sword', 'stairs down', 'sword'],
-    ['magic stones','monster','stairs down','stairs up','empty'],
+    ['magic stones','monster','stairs down','empty','stairs up'],
     ['empty','sword','stairs up','empty','monster']
     ]
 
@@ -13,7 +11,6 @@ current_room = 0
 current_floor = 2
 location = dungeon[current_floor][current_room]
 
-
 #game loop
 while True:
 
@@ -22,7 +19,7 @@ while True:
 
     #Where we are
     if location == 'empty':
-        print("You wake up in an empty room")
+        print("You are in an empty room")
     elif location == 'sword':
         print("You walk into a room with a sword") 
     elif location == 'stairs up':
@@ -36,10 +33,8 @@ while True:
     elif location == 'boss monster':
         print("You have encounter the Boss monster, Defeating him will allow you to escape")
     
-
-
     #player choices
-    player_input = input("What would you like to do? (Left, Right, Up, Down, Grab, Fight) > ")
+    player_input = input("What would you like to do? (Left, Right, Up, Down, Grab, Fight, Inventory) > ")
     if player_input == 'Right' :
         current_room += 1
         if current_room == 5:
@@ -61,8 +56,25 @@ while True:
             current_floor += 1
         else:
             print("There are no stairs leading downwards.")
+    elif player_input == 'Grab':
+        if location == 'Sword' or 'Magic Stones':
+            inventory.append(location)
+            dungeon[current_floor][current_room] = 'empty'
+        else:
+            print("There is nothing to grab here")
+    elif player_input == 'Inventory':
+        print("you have:")
+        print(' '.join(inventory))
+    elif player_input == 'Fight':
+        if location == 'monster' and 'sword' in inventory:
+            print("You defeated the Big Monster")
+            dungeon[current_floor][current_room] = 'empty'
+    elif player_input == 'Fight':
+        if location == 'boss monster' and ('sword' in inventory and 'magic stones' in inventory):
+            print("You defeated the Dungeons Boss Monster, Congratulations. You may now escape the Dungeon")
+            break
+        else:
+            print("There are no enemies nearby you can fight right now")
 
+            
 
-
-
-    
