@@ -82,7 +82,7 @@ print(b)
 Bonus - In your Notebook
 How would you access d from the list a? print(a[0],[0])
 '''
-food = ['donuts', 'pancakes', 'bacon', 'waffles','eggs','baggles']
+food = ['donuts', 'pancakes', 'bacon', 'waffles','eggs','bagles']
 score = [0,0,0,0,0,0]
 
 print('Please answer each questions with "y" for "yes" and "n" for "no."')
@@ -117,6 +117,23 @@ if user_input == 'y':
     score[3] += 1
 
 
+user_input = input('Do you like foods that came from chickens? ')
+if user_input == 'y':
+    score[4] += 1
+
+
+user_input = input('Do you like meat for breakfast? ')
+if user_input == 'y':
+    score[2] += 1
+
+
+user_input = input('Do you like foods that can be served with sprinkles on top? ')
+if user_input == 'y':
+    score[0] += 1
+    score[1] += 1
+
+
+    
 fav_food_index = score.index(max(score))
 print(f"Your favorite food was: {food[fav_food_index]}")
 
